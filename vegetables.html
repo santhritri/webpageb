@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits - Grocery Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+
+        section {
+            margin: 50px;
+        }
+
+        .product-item {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 100px;
+            height: 100px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fruits - Grocery Store</h1>
+        <p>Choose from our selection of fresh fruits!</p>
+    </header>
+
+    <section class="products">
+        <h2>Our Fruits</h2>
+        <!-- Fruit Products -->
+        <div class="product-item">
+            <img src="https://www.urbangroc.com/wp-content/uploads/2021/04/carrot-01-150x150.jpg" alt="Carrot">
+            <h3>Carrot</h3>
+            <p>Rs75.75</p>
+            <button onclick="addToCart('Carrot', 75.75)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://png.pngtree.com/png-vector/20240905/ourmid/pngtree-fresh-broccoli-high-quality-isolated-png-image_13758277.png" alt="Broccoli">
+            <h3>Broccoli</h3>
+            <p>Rs100.20</p>
+            <button onclick="addToCart('Broccoli', 100.20)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://www.creativehatti.com/wp-content/uploads/2024/02/Picture-of-fresh-spinach-leaves-Small-150x150.jpg" alt="Spinach">
+            <h3>Spinach</h3>
+            <p>Rs20.50</p>
+            <button onclick="addToCart('Spinach', 20.50)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQTiANdrpCknhDzubCr1A8ptysEJi0R0z2ng&s" alt="Lettuce">
+            <h3>Lettuce</h3>
+            <p>Rs18.90</p>
+            <button onclick="addToCart('Lettuce', 18.90)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://3.imimg.com/data3/QN/LE/MY-10389344/fresh-cucumber-1065708-150x150-250x250.jpg" alt="Cucumber">
+            <h3>Cucumber</h3>
+            <p>Rs20.10</p>
+            <button onclick="addToCart('Cucumber', 20.10)">Add to Cart</button>
+        </div>
+<div class="product-item">
+    <img src="https://5.imimg.com/data5/SELLER/Default/2023/7/328270845/OG/XH/TD/40002742/tomoto-150x150-250x250.jpg" alt="Tomato">
+    <h3>Tomato</h3>
+    <p>Rs50.00</p>
+    <button onclick="addToCart('Tomato', 50.00)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://www.jiomart.com/images/product/150x150/590000136/white-radish-1-kg-product-images-o590000136-p590000136-0-202409171905.jpg" alt="Radish">
+    <h3>Radish</h3>
+    <p>Rs35.20</p>
+    <button onclick="addToCart('Radish', 35.20)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://www.jiomart.com/images/product/150x150/590000090/potato-1-kg-product-images-o590000090-p590000090-0-202410141244.jpg" alt="Potato">
+    <h3>Potato</h3>
+    <p>Rs45.80</p>
+    <button onclick="addToCart('Potato', 45.80)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsnmkXwngNWtHH9n2-ok0zfZa3UXIeNNiyQw&s" alt="Beans">
+    <h3>Beans</h3>
+    <p>Rs105.50</p>
+    <button onclick="addToCart('Beans', 105.50)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://www.bigbasket.com/media/uploads/p/s/40287310-2_3-fresho-coloured-capsicum-mix.jpg" alt="Capsicum">
+    <h3>Capsicum</h3>
+    <p>Rs50.00</p>
+    <button onclick="addToCart('Capsicum', 50.00)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://3.imimg.com/data3/RN/CW/MY-8611310/screenhunter_25-apr-30-14-18-250x250.jpg" alt="Cauliflower">
+    <h3>Cauliflower</h3>
+    <p>Rs25.50</p>
+    <button onclick="addToCart('Cauliflower', 25.50)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3o8EZ6Z0XN0mxX5cxkItu1MW5gsLyjbHeqA&s" alt="Corn">
+    <h3>Corn</h3>
+    <p>Rs18.80</p>
+    <button onclick="addToCart('Corn', 18.80)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://3.imimg.com/data3/YS/GK/ETO-4069743/wp-content-uploads-2011-08-lady-finger1-150x150-250x250.jpg" alt="Ladies Finger">
+    <h3>Ladies Finger</h3>
+    <p>Rs40.30</p>
+    <button onclick="addToCart('Ladies Finger', 40.30)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://www.jiomart.com/images/product/150x150/590003515/onion-1-kg-product-images-o590003515-p590003515-0-202408070949.jpg" alt="Onion">
+    <h3>Onion</h3>
+    <p>Rs100.00</p>
+    <button onclick="addToCart('Onion', 100.00)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://3.imimg.com/data3/LW/GS/MY-8786638/8-250x250.jpg" alt="Garlic">
+    <h3>Garlic</h3>
+    <p>Rs90.90</p>
+    <button onclick="addToCart('Garlic', 90.90)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://www.bigbasket.com/media/uploads/p/s/50000509_6-fresho-ginger-organically-grown.jpg" alt="Ginger">
+    <h3>Ginger</h3>
+    <p>Rs15.50</p>
+    <button onclick="addToCart('Ginger', 15.50)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://www.bigbasket.com/media/uploads/p/s/10000193-2_3-fresho-sweet-potato.jpg" alt="Sweet Potato">
+    <h3>Sweet Potato</h3>
+    <p>Rs33.70</p>
+    <button onclick="addToCart('Sweet Potato', 33.70)">Add to Cart</button>
+</div>
+<div class="product-item">
+    <img src="https://www.bigbasket.com/media/uploads/p/s/40022635_6-fresho-beetroot-organically-grown.jpg" alt="Beetroot">
+    <h3>Beetroot</h3>
+    <p>Rs70.40</p>
+    <button onclick="addToCart('Beetroot', 70.40)">Add to Cart</button>
+</div>
+
+
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Grocery Store</p>
+    </footer>
+
+    <script>
+        // Function to add items to the cart and redirect to cart page
+        function addToCart(product, price) {
+            // Get existing cart from localStorage, or create an empty cart
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the new item to the cart
+            cart.push({ product, price });
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirect to the cart page
+            window.location.href = 'cart.html';
+        }
+    </script>
+
+</body>
+</html>

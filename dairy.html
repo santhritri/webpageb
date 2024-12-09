@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Products - Grocery Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+
+        section {
+            margin: 50px;
+        }
+
+        .product-item {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 100px;
+            height: 100px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dairy Products - Grocery Store</h1>
+        <p>Fresh and healthy dairy products for your meals!</p>
+    </header>
+
+    <section class="products">
+        <h2>Our Dairy Products</h2>
+        <!-- Dairy Products -->
+        <div class="product-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfegrlgckl1N6VOKZk1FtrSH72kxj_UKpiNg&s" alt="Milk">
+            <h3>Milk</h3>
+            <p>Rs23.50</p>
+            <button onclick="addToCart('Milk', 1.50)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://www.urbangroc.com/wp-content/uploads/2021/04/Amul-Cheese-Slice-150x150.jpg" alt="Cheese">
+            <h3>Cheese</h3>
+            <p>Rs120.00</p>
+            <button onclick="addToCart('Cheese', 120.00)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://www.jiomart.com/images/product/150x150/494304016/mother-dairy-plan-greek-yoghurt-100-g-cup-product-images-o494304016-p610078936-0-202410071502.jpg" alt="Yogurt">
+            <h3>Yogurt</h3>
+            <p>Rs60.20</p>
+            <button onclick="addToCart('Yogurt', 60.20)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://www.jiomart.com/images/product/150x150/490001387/amul-butter-100-g-carton-product-images-o490001387-p490001387-0-202203170403.jpg" alt="Butter">
+            <h3>Butter</h3>
+            <p>Rs150.80</p>
+            <button onclick="addToCart('Butter', 150.80)">Add to Cart</button>
+        </div>
+        
+        <div class="product-item">
+            <img src="https://www.jiomart.com/images/product/150x150/490001540/amul-fresh-cooking-cream-1-l-tetra-pak-product-images-o490001540-p490001540-0-202203170446.jpg" alt="Cream">
+            <h3>Cream</h3>
+            <p>Rs60.50</p>
+            <button onclick="addToCart('Cream', 60.50)">Add to Cart</button>
+        </div>
+
+<div class="product-item">
+            <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_150,h_150/https://www.savorysimple.net/wp-content/uploads/2020/01/1-Milk-Bread_0121-150x150.jpg" alt="Cream">
+            <h3>Milk Bread</h3>
+            <p>Rs55.50</p>
+            <button onclick="addToCart('Milk Bread', 55.50)">Add to Cart</button>
+        </div>
+<div class="product-item">
+    <img src="https://www.bigbasket.com/media/uploads/p/xl/40163750_4-kwality-walls-frozen-dessert-shameless-vanilla.jpg" alt="Ice Cream">
+    <h3>Vanilla Ice Cream</h3>
+    <p>Rs200.50</p>
+    <button onclick="addToCart('Ice Cream', 200.50)">Add to Cart</button>
+</div>
+<div class="product-item">
+    <img src="https://assets.unileversolutions.com/v1/1868113.png">
+    <h3>Strawberry Ice Cream</h3>
+    <p>Rs250.00</p>
+    <button onclick="addToCart('Strawberry Ice Cream', 250.00)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://m.media-amazon.com/images/I/61tWgzjNrOL._AC_UF894,1000_QL80_.jpg">
+    <h3>Chocolate Ice Cream</h3>
+    <p>Rs250.50</p>
+    <button onclick="addToCart('Chocolate Ice Cream', 250.50)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://www.jiomart.com/images/product/150x150/590002698/nandini-curd-500-g-pouch-product-images-o590002698-p590002698-0-202203150445.jpg" alt="Curd">
+    <h3>Curd</h3>
+    <p>Rs25.00</p>
+    <button onclick="addToCart('Curd', 25.00)">Add to Cart</button>
+</div>
+<div class="product-item">
+    <img src="https://www.jiomart.com/images/product/150x150/490006894/milky-mist-paneer-200-g-pack-product-images-o490006894-p490006894-0-202410161200.jpg" alt="Paneer">
+    <h3>MilkyMist Paneer</h3>
+    <p>Rs100.00</p>
+    <button onclick="addToCart('Paneer', 100.00)">Add to Cart</button>
+</div>
+<div class="product-item">
+    <img src="https://www.bigbasket.com/media/uploads/p/s/266070_12-nestle-milkmaid-sweetened-condensed-milk.jpg" alt="Milkmaid">
+    <h3>Milkmaid</h3>
+    <p>Rs125.50</p>
+    <button onclick="addToCart('Milkmaid', 125.50)">Add to Cart</button>
+</div>
+<div class="product-item">
+    <img src="https://www.jiomart.com/images/product/150x150/490011311/grb-ghee-200-ml-jar-product-images-o490011311-p490011311-0-202203150148.jpg" alt="Ghee">
+    <h3>Ghee</h3>
+    <p>Rs230.00</p>
+    <button onclick="addToCart('Ghee', 230.00)">Add to Cart</button>
+</div>
+<div class="product-item">
+    <img src="https://www.jiomart.com/images/product/150x150/491168476/amul-whipping-cream-250-ml-product-images-o491168476-p590086918-0-202405061541.jpg" alt="Whipping Cream">
+    <h3>Whipping Cream</h3>
+    <p>Rs170.50</p>
+    <button onclick="addToCart('Whipping Cream', 170.50)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://www.jiomart.com/images/product/150x150/490001781/amul-masti-spiced-buttermilk-1-l-tetra-pak-product-images-o490001781-p490001781-0-202203170922.jpg" alt="Buttermilk">
+    <h3>Buttermilk</h3>
+    <p>Rs20.80</p>
+    <button onclick="addToCart('Buttermilk', 20.80)">Add to Cart</button>
+</div>
+
+<div class="product-item">
+    <img src="https://kiranajunction.co.in/wp-content/uploads/2024/06/266093_5-nestle-everyday-dairy-whitener-milk-powder-for-tea-150x150.webp" alt="Milk Powder">
+    <h3>Milk Powder</h3>
+    <p>Rs45.80</p>
+    <button onclick="addToCart('Milk Powder', 45.80)">Add to Cart</button>
+</div>
+<div class="product-item">
+    <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/dfqxoo8mgkztanwhzobt" alt="Tofu">
+    <h3>Tofu</h3>
+    <p>Rs120.20</p>
+    <button onclick="addToCart('Tofu', 120.20)">Add to Cart</button>
+</div>
+<div class="product-item">
+    <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/kwrpl2x4sxgw32yegoft" alt="Badam Milk">
+    <h3>Amul Badam Milk</h3>
+    <p>Rs45.00</p>
+    <button onclick="addToCart('Badam Milk', 45.00)">Add to Cart</button>
+</div>
+
+
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Grocery Store</p>
+    </footer>
+
+    <script>
+        // Function to add products to the cart
+        function addToCart(product, price) {
+            // Get the cart from localStorage or create an empty array if it doesn't exist
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the product to the cart
+            cart.push({ product: product, price: price });
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirect to the cart page
+            window.location.href = 'cart.html';
+        }
+    </script>
+
+</body>
+</html>
