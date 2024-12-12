@@ -38,7 +38,7 @@
         }
 
         .cart-item div {
-            width: 20%; /* Adjust width as needed */
+            width: 25%; /* Adjust width as needed */
         }
 
         footer {
@@ -72,28 +72,6 @@
             background-color: darkred;
         }
 
-        .quantity-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .quantity-buttons button {
-            background-color: #ddd;
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .quantity-buttons button:hover {
-            background-color: #bbb;
-        }
-
-        .quantity-buttons span {
-            margin: 0 10px;
-            font-size: 18px;
-        }
     </style>
 </head>
 <body>
@@ -103,13 +81,11 @@
         <p>Review your cart before checkout!</p>
     </header>
 
-    <a href="home.html" class="back">Back to Home</a>
-
     <section class="cart-section">
         <h2>Your Cart</h2>
         <div id="cart-items"></div>
         <div id="cart-total">
-            <h3>Total: Rs<span id="cart-total-price">0.00</span></h3>
+            <h3>Total: $<span id="cart-total-price">0.00</span></h3>
         </div>
     </section>
 
@@ -140,92 +116,53 @@
         // Function to update the localStorage and refresh the cart display
         function updateCart() {
             localStorage.setItem('cart', JSON.stringify(cart));
-            renderCart();
+            location.reload();
         }
 
-        // Function to render the cart
-        function renderCart() {
-            const cartItemsDiv = document.getElementById('cart-items');
-            const totalPriceDiv = document.getElementById('cart-total-price');
-            cartItemsDiv.innerHTML = ''; // Clear the cart items before rendering them again
-            let totalPrice = 0;
+        // Display cart items with quantity
+        const cartItemsDiv = document.getElementById('cart-items');
+        let totalPrice = 0;
 
-            // Header for the cart table
-            const headerRow = document.createElement('div');
-            headerRow.classList.add('cart-item');
-            headerRow.innerHTML = `
-                <div><strong>Product</strong></div>
-                <div><strong>Quantity</strong></div>
-                <div><strong>Total Price</strong></div>
-                <div><strong>Remove</strong></div>
+        // Header for the cart table
+        const headerRow = document.createElement('div');
+        headerRow.classList.add('cart-item');
+        headerRow.innerHTML = `
+            <div><strong>Product</strong></div>
+            <div><strong>Quantity</strong></div>
+            <div><strong>Total Price</strong></div>
+            <div><strong>Remove</strong></div>
+        `;
+        cartItemsDiv.appendChild(headerRow);
+
+        for (let product in groupedCart) {
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.classList.add('cart-item');
+            const item = groupedCart[product];
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', function() {
+                // Remove the item from the cart array
+                cart = cart.filter(cartItem => cartItem.product !== product);
+
+                // Update cart in localStorage and refresh the page
+                updateCart();
+            });
+
+            cartItemDiv.innerHTML = `
+                <div>${product}</div>
+                <div>${item.quantity}</div>
+                <div>$${item.totalPrice.toFixed(2)}</div>
             `;
-            cartItemsDiv.appendChild(headerRow);
-
-            for (let product in groupedCart) {
-                const cartItemDiv = document.createElement('div');
-                cartItemDiv.classList.add('cart-item');
-                const item = groupedCart[product];
-
-                const removeButton = document.createElement('button');
-                removeButton.textContent = 'Remove';
-                removeButton.addEventListener('click', function() {
-                    // Remove the item from the cart array
-                    cart = cart.filter(cartItem => cartItem.product !== product);
-
-                    // Remove the item from groupedCart to ensure it's removed from the display
-                    delete groupedCart[product];
-
-                    // Update cart in localStorage and refresh the page
-                    updateCart();
-                });
-
-                // Increment and Decrement buttons
-                const incrementButton = document.createElement('button');
-                incrementButton.textContent = '+';
-                incrementButton.addEventListener('click', function() {
-                    // Increase the quantity by 1
-                    item.quantity += 1;
-                    item.totalPrice += item.price;
-                    updateCart();
-                });
-
-                const decrementButton = document.createElement('button');
-                decrementButton.textContent = '-';
-                decrementButton.addEventListener('click', function() {
-                    // Decrease the quantity by 1, but not below 1
-                    if (item.quantity > 1) {
-                        item.quantity -= 1;
-                        item.totalPrice -= item.price;
-                        updateCart();
-                    }
-                });
-
-                // Quantity display
-                const quantityDiv = document.createElement('div');
-                quantityDiv.classList.add('quantity-buttons');
-                quantityDiv.innerHTML = `
-                    <button>${decrementButton.textContent}</button>
-                    <span>${item.quantity}</span>
-                    <button>${incrementButton.textContent}</button>
-                `;
-
-                cartItemDiv.innerHTML = `
-                    <div>${product}</div>
-                    <div>${quantityDiv.innerHTML}</div>
-                    <div>Rs${item.totalPrice.toFixed(2)}</div>
-                `;
-                cartItemDiv.appendChild(removeButton); // Add the "Remove" button
-                cartItemsDiv.appendChild(cartItemDiv);
-                totalPrice += item.totalPrice;
-            }
-
-            // Display the total price
-            totalPriceDiv.textContent = totalPrice.toFixed(2);
+            cartItemDiv.appendChild(removeButton); // Add the "Remove" button
+            cartItemsDiv.appendChild(cartItemDiv);
+            totalPrice += item.totalPrice;
         }
 
-        // Initial render
-        renderCart();
+        // Display the total price
+        document.getElementById('cart-total-price').textContent = totalPrice.toFixed(2);
     </script>
 
 </body>
 </html>
+
